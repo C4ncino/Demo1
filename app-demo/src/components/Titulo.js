@@ -10,12 +10,12 @@ const TituloRojo = () => {
     );
 };
 
-const TituloVerde = ({alumno, matricula, color}) => {
+const TituloVerde = ({alumno, apellido, matricula, color}) => {
 
     return (
-        <h1 className = 'Title' style = {{color : color}}>
-          Hola {alumno} con id {matricula}
-        </h1>
+        <p className = 'Title' style = {{color : color}}>
+          {alumno} {apellido} :: id {matricula}
+        </p>
     );
 };
 
