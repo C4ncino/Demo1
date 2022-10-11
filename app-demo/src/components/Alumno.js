@@ -1,5 +1,4 @@
 import React from "react";
-import {TituloVerde} from "./Titulo";
 
 //Component
 const Alumno = ({name, lastname, mat}) => {
