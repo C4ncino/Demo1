@@ -1,22 +1,17 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import Lista from './components/Lista';
+import FormularioLogin from './components/FormularioLogin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const App = () => {
-  const [sesion, cambiarSesion] = useState(true);
+  const [sesion, cambiarSesion] = useState(false);
   const [cuenta, cambiaCuenta] = useState(0)
 
   const nombres = ["Carlos", "JP"];
   const apellidos = ["Cancino", "Haro"];
   const matriculas = ["193305", "183025"]
-  // let sesion = true;
-  // const cambiarSesion = () => {
-  //   console.log(sesion)
-  //   sesion = !sesion;
-  //   console.log(sesion)
-  // };
 
   return (
     <>
@@ -33,8 +28,9 @@ const App = () => {
         </>
         ) : (
         <>
-        <h2>No has iniciado sesion</h2>
-          <button onClick={() => cambiarSesion(true)} > Iniciar Sesión </button>
+          <h2>No has iniciado sesion</h2>
+          <FormularioLogin cambiarSesion={cambiarSesion}/>
+          {/* <button onClick={() => cambiarSesion(true)} > Iniciar Sesión </button> */}
         </>
         )
       }
