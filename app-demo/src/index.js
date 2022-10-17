@@ -2,11 +2,13 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import Lista from './components/Lista';
 import FormularioLogin from './components/FormularioLogin';
+import SignIn from './components/SignIn';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const App = () => {
   const [sesion, cambiarSesion] = useState(false);
+  const [signed, cambiaSigned] = useState(false);
   const [cuenta, cambiaCuenta] = useState(0)
 
   const nombres = ["Carlos", "JP"];
@@ -28,9 +30,15 @@ const App = () => {
         </>
         ) : (
         <>
-          <h2>No has iniciado sesion</h2>
-          <FormularioLogin cambiarSesion={cambiarSesion}/>
-          {/* <button onClick={() => cambiarSesion(true)} > Iniciar Sesión </button> */}
+          {signed === true ? (
+            <>
+              <h2>No has iniciado sesion</h2>
+              <p></p>
+              <FormularioLogin cambiarSesion={cambiarSesion}/>
+            </>
+          ) : (
+            <SignIn cambiaSigned={cambiaSigned}/>
+          )}
         </>
         )
       }
