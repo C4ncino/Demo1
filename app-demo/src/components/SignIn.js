@@ -91,6 +91,9 @@ const SignIn = ({cambiaSigned}) => {
     if(minLetras && tieneMayus && tieneNumero && iguales && user.length !== 0 && !formato) {
         setFormato(true);
     }
+    else if(minLetras && tieneMayus && tieneNumero && iguales && user.length === 0 && formato) {
+        setFormato(false);
+    }
     
     return ( 
         <form action = "" onSubmit={onSubmit}>

@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client';
 import Lista from './components/Lista';
 import FormularioLogin from './components/FormularioLogin';
 import SignIn from './components/SignIn';
+import Button from 'react-bootstrap/Button';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const App = () => {
-  const [sesion, cambiarSesion] = useState(false);
-  const [signed, cambiaSigned] = useState(false);
+  const [sesion, cambiarSesion] = useState(true);
+  const [signed, cambiaSigned] = useState(true);
   const [cuenta, cambiaCuenta] = useState(0)
 
   const nombres = ["Carlos", "JP"];
@@ -35,6 +36,7 @@ const App = () => {
               <h2>No has iniciado sesion</h2>
               <p></p>
               <FormularioLogin cambiarSesion={cambiarSesion}/>
+              <Button onClick={cambiaSigned}>Registrate</Button>
             </>
           ) : (
             <SignIn cambiaSigned={cambiaSigned}/>
