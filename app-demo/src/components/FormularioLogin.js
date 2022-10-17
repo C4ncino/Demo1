@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Boton from "../styles/Boton";
 
 const FormularioLogin = ({cambiarSesion}) => {
     const [user, setUser] = useState("");
@@ -17,10 +18,10 @@ const FormularioLogin = ({cambiarSesion}) => {
         e.preventDefault();
         if (user === "Carlos" && password === "123"){
             cambiarSesion(true)
-            alert("CORRECTO")
         }
         else{
-            alert("INCORRECTO")
+            setUser("");
+            setPassword("");
         }
     };
 
@@ -48,7 +49,7 @@ const FormularioLogin = ({cambiarSesion}) => {
                 />
             </div>
             <div>
-                <button>Inicar Sesion</button>
+                <Boton>Iniciar Sesion</Boton>
             </div>
         </form>
     );

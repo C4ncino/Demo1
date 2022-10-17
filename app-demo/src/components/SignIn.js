@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import Boton from "../styles/Boton";
 
 const SignIn = ({cambiaSigned}) => {
     const [user, setUser] = useState("");
@@ -73,8 +74,8 @@ const SignIn = ({cambiaSigned}) => {
         setValidacionP1(mensaje);
         
         setRefresh(false);
-
     }
+
     if (minLetras && tieneMayus && tieneNumero && validacionP1.length > 0) {
         setValidacionP1("");
     }
@@ -138,7 +139,7 @@ const SignIn = ({cambiaSigned}) => {
             {formato === true ? (
                 <>
                     <div>
-                        <button>Registrate</button>
+                        <Boton>Regisrate</Boton>
                     </div>
                 </>
             ) : (
