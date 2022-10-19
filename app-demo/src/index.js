@@ -8,8 +8,8 @@ import Button from 'react-bootstrap/Button';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const App = () => {
-  const [sesion, cambiarSesion] = useState(true);
-  const [signed, cambiaSigned] = useState(true);
+  const [sesion, cambiarSesion] = useState(false);
+  const [signed, cambiaSigned] = useState(false);
   const [cuenta, cambiaCuenta] = useState(0)
 
   const nombres = ["Carlos", "JP"];

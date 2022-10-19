@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import Boton from "../styles/Boton";
 
 const SignIn = ({cambiaSigned}) => {
@@ -18,6 +18,10 @@ const SignIn = ({cambiaSigned}) => {
     let regExpMayus = /[A-Z]/;
     let regExpNum = /\d/;
     let mensaje = "";
+
+    useEffect(() => {
+        console.log("Montando Componente");
+    }, []);
 
     const onChange = (e) => {
         if (e.target.name === "user") {
@@ -119,7 +123,7 @@ const SignIn = ({cambiaSigned}) => {
                 />
             </div>
             <div>
-                <label htmlFor = "password">Confirme Contraseña: </label>
+                <label htmlFor = "password2">Confirme Contraseña: </label>
                 <input 
                     type = "password" 
                     name = "password2" 
